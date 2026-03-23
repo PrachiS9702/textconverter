@@ -2,37 +2,123 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #d4c5be;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #282c34;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.App-link {
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  list-style: none;
+}
+
+.navbar ul li:hover {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar h1 {
+  cursor: pointer;
+} */
+
+.btn {
+  margin-left: 50rem;
+}
+
+.btn.btn-primary {
+  margin-left: 60rem;
+}
+
+.form-control {
+  position:fixed;
+  top: 2rem;
+  left: 85%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+.container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.container-fluid{
+background-color: #f1af90;
+padding: 0%;
+border: 0.2px solid #f1af90;
+}
+
+.text-center {
+  text-align: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+  
+}
+
+.button {
+
+/* background-color: rgba(5, 84, 123, 0.311);
+color: black; */
+padding: 0.3rem 0.6rem;
+border: none;
+border-radius: 0.25rem;
+cursor: pointer;
+margin: 0.1rem;
+}
+
+
+
+
+
+
+
+/* .row {
+ margin: 0;
+ padding: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+} */
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-block: 0.5rem;
+}
+
+.form-check-input{
+
+  margin-right: 10px;
+}
+
+.textarea {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
 }
