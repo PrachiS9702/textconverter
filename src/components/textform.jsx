@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import PropTypes from 'prop-types';
-import '../App.css';
+// import '../App.css';
+
 
 
 function TextForm(props) {
@@ -15,7 +16,7 @@ function TextForm(props) {
     }
 
     const handleLowercase = () => {
-      
+
         setText(text.toLowerCase());
         console.log("Lowercase clicked", text);
         props.showAlert("Lowercase clicked", "success");
@@ -43,13 +44,20 @@ function TextForm(props) {
 
     return (
         <>
-            <div className="container">
+            <div className="container" style={{padding: '30px'}}>
                 <div className="row">
                     <div className="col">
                         <h1>{props.title}</h1>
 
 
-                        <textarea className='textarea' placeholder="Enter text here" value={text} style={{border: '4px solid #000000', backgroundColor: props.mode === 'dark' ? '#333333' : '#ffffff'}}
+                        <textarea className='textarea' placeholder="Enter text here" value={text} 
+                        style={{
+                            width: '50vw',
+                            border: props.mode === 'dark' ? '4px solid #ffffff' : '4px solid #000000', 
+                            backgroundColor: props.mode === 'dark' ? '#7d7b7b' : '#ffffff',
+                            color: props.mode === 'dark' ? '#ffffff' : '#000000',
+                           
+                        }}
                             onChange={(e) => setText(e.target.value)} rows="10" cols="100" >
 
                         </textarea>
@@ -57,16 +65,16 @@ function TextForm(props) {
 
                     </div>
 
-                    <div className="text-center" >
+                    <div className="text-center" style={{gap: '10px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <button className="button" disabled={text.length === 0}
-                            style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#333333' : '#ffffff'}}
+                            style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#072f6c7c' : '#3996f2'}}
                             onClick={handleUppercase}>Convert To Uppercase</button>
 
                         <div className="text-center" style={{ spacing: '10px' }}>
                             <button className="button" disabled={text.length === 0} 
                             style={{
                                 color: props.mode === 'dark' ? '#ffffff' : '#000000', 
-                                backgroundColor: props.mode === 'dark' ? '#333333' : '#ffffff'}} 
+                                backgroundColor: props.mode === 'dark' ? '#072f6c7c' : '#3996f2'}} 
                             onClick={handleLowercase}>Convert To Lowercase</button>
                         </div>
 
@@ -74,17 +82,17 @@ function TextForm(props) {
                             <button className="button" disabled={text.length === 0} 
                             style={{
                                 color: props.mode === 'dark' ? '#ffffff' : '#000000', 
-                                backgroundColor: props.mode === 'dark' ? '#044779' : '#04740d'}} 
+                                backgroundColor: props.mode === 'dark' ? '#072f6c7c' : '#3996f2'}} 
                             onClick={handleFirstLetterCapital}>Convert To First Letter Capital</button>
                         </div>
 
                        
                         <div className="text-center" style={{ spacing: '10px' }}>
-                            <button className="button" disabled={text.length === 0} style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#333333' : '#ffffff'}} onClick={handleClearText}>Clear Text</button>
+                            <button className="button" disabled={text.length === 0} style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#072f6c7c' : '#3996f2'}} onClick={handleClearText}>Clear Text</button>
                         </div>
 
                         <div className="text-center" style={{ spacing: '10px' }}>
-                            <button className="button" disabled={text.length === 0} style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#333333' : '#ffffff'}} onClick={handleRemoveExtraSpace}>Remove Extra Spaces</button>
+                            <button className="button" disabled={text.length === 0} style={{color: props.mode === 'dark' ? '#ffffff' : '#000000', backgroundColor: props.mode === 'dark' ? '#072f6c7c' : '#3996f2'}} onClick={handleRemoveExtraSpace}>Remove Extra Spaces</button>
                         </div>
                     </div>
 
@@ -107,7 +115,12 @@ function TextForm(props) {
                     <div>
 
                         <h2 className="my-2">Preview</h2>
-                        <p style={{border: '4px solid #000000', padding: '10px' }}>{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
+                        <p style={{
+                            border: props.mode === 'dark' ? '4px solid #ffffff' : '4px solid #000000', 
+                            padding: '10px',
+                            backgroundColor: props.mode === 'dark' ? '#7d7b7b' : '#ffffff',
+                            color: props.mode === 'dark' ? '#ffffff' : '#000000'
+                        }}>{text.length > 0 ? text : "Enter something in the textbox above to preview it here"}</p>
                       
                     </div>
                 </div>

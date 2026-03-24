@@ -4,15 +4,16 @@ import About from "../components/About";
 import TextForm from "../components/textform";
 
 
+
 function AppRoutes(props) {
   return (
     <Routes>
       <Route path="/" element={
         <div>
-          <TextForm title="Text Converter" togglemode={props.togglemode} showAlert={props.showAlert} />
+          <TextForm title="Text Converter" togglemode={props.togglemode} showAlert={props.showAlert} mode={props.mode} />
         </div>
       } />
-      <Route path="/about" element={<About />} />
+      <Route path="/about" element={<About togglemode={props.togglemode} showAlert={props.showAlert} mode={props.mode}/>} />
     </Routes>
   );
 }
